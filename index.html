@@ -47,9 +47,46 @@
             align-items: center;
         }
         
-        .logo img {
-            max-width: 250px;
-            height: auto;
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            background-color: var(--primary-blue);
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .logo-text-simply {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text-sales {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary-yellow);
+            line-height: 1;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-tagline {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        
+        .logo-tagline-powering, 
+        .logo-tagline-growth {
+            color: var(--secondary-yellow);
+        }
+        
+        .logo-tagline-business {
+            color: var(--white);
         }
         
         nav ul {
@@ -96,7 +133,7 @@
         }
         
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 15px;
             letter-spacing: -1px;
@@ -104,6 +141,7 @@
         
         .hero h1 .simply {
             color: var(--white);
+            margin-right: 15px;
         }
         
         .hero h1 .sales {
@@ -113,12 +151,24 @@
         .hero p {
             font-size: 1.8rem;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
         }
         
         .hero p .powering, 
         .hero p .growth {
             color: var(--secondary-yellow);
+        }
+        
+        .hero-image {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Mission Section */
@@ -139,15 +189,72 @@
         }
         
         .mission-content {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+        
+        .mission-cols {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .mission-text {
+            flex: 3;
+            min-width: 300px;
+        }
+        
+        .mission-image {
+            flex: 2;
+            min-width: 300px;
             text-align: center;
+        }
+        
+        .mission-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .mission-highlight {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .mission-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .mission-list li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            position: relative;
+        }
+        
+        .mission-list li:before {
+            content: "•";
+            color: var(--primary-blue);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .mission-icon {
+            display: inline-block;
+            width: 28px;
+            margin-right: 10px;
         }
         
         /* Services Section */
         .services {
             padding: 80px 0;
             background-color: var(--light-gray);
+            position: relative;
         }
         
         .services-grid {
@@ -155,6 +262,7 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 30px;
+            position: relative;
         }
         
         .service-card {
@@ -162,12 +270,12 @@
             border-radius: 8px;
             padding: 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         
         .service-card h3 {
@@ -185,6 +293,11 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
         }
         
         .service-icon svg {
@@ -197,6 +310,19 @@
         .team {
             padding: 80px 0;
             background-color: white;
+        }
+        
+        .team-image-banner {
+            margin-bottom: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .team-image-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         .team-grid {
@@ -309,6 +435,70 @@
             font-size: 1.3rem;
         }
         
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary-yellow);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--primary-blue);
@@ -351,9 +541,12 @@
         }
         
         .footer-logo {
-            max-width: 200px;
             margin-bottom: 15px;
-            color: white;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
         }
         
         .footer-logo span {
@@ -389,11 +582,20 @@
             }
             
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
                 font-size: 1.4rem;
+            }
+            
+            .mission-cols {
+                flex-direction: column;
+            }
+            
+            .mission-image {
+                order: -1;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -401,8 +603,17 @@
 <body>
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <img src="/api/placeholder/250/80" alt="SimplySales Logo" style="background-color: #4167ea; border-radius: 4px;">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-text">
+                        <span class="logo-text-simply">simply</span><span class="logo-text-sales">sales</span>
+                    </div>
+                    <div class="logo-tagline">
+                        <span class="logo-tagline-powering">Powering</span> 
+                        <span class="logo-tagline-business">Business</span> 
+                        <span class="logo-tagline-growth">Growth</span>
+                    </div>
+                </div>
             </div>
             <nav>
                 <ul>
@@ -420,6 +631,9 @@
         <div class="container">
             <h1><span class="simply">simply</span><span class="sales">sales</span></h1>
             <p><span class="powering">Powering</span> Business <span class="growth">Growth</span></p>
+            <div class="hero-image">
+                <img src="/api/placeholder/600/300" alt="Business growth chart">
+            </div>
             <a href="#contact" class="btn">Contact Us</a>
         </div>
     </section>
@@ -430,11 +644,25 @@
                 <h2>Our Mission</h2>
             </div>
             <div class="mission-content">
-                <p>We provide integrated, personalized solutions for the financial and commercial sectors, focusing on creating, managing, and monitoring specialized sales networks tailored to client needs.</p>
-                <br>
-                <p>Our goal is to become a strategic partner, offering consulting and tools that enable effective management of commercial networks.</p>
-                <br>
-                <p>We're committed to ensuring every client achieves their growth objectives.</p>
+                <div class="mission-cols">
+                    <div class="mission-text">
+                        <p class="mission-highlight">Siamo specialisti nella crescita commerciale.</p>
+                        <p>Forniamo soluzioni integrate e personalizzate per il settore finanziario e commerciale, focalizzandoci sulla creazione, gestione e monitoraggio di reti vendita specializzate e costruite su misura in funzione delle esigenze dei clienti.</p>
+                        <br>
+                        <p>Il nostro obiettivo è diventare un partner strategico, offrendo:</p>
+                        <ul class="mission-list">
+                            <li><strong>Formazione completa</strong> - Programmi formativi normativi e commerciali, curati da esperti del settore</li>
+                            <li><strong>Monitoraggio costante</strong> - Strumenti di analisi e reporting per ottimizzare le performance</li>
+                            <li><strong>Controllo qualità</strong> - Mystery shopping e audit periodici per garantire standard elevati</li>
+                            <li><strong>Tecnologie avanzate</strong> - Utilizzo di piattaforme digitali e multicanalità per massimizzare i risultati</li>
+                        </ul>
+                        <br>
+                        <p>Ci impegniamo a garantire che ogni cliente raggiunga i propri obiettivi di crescita attraverso un approccio personalizzato e risultati misurabili.</p>
+                    </div>
+                    <div class="mission-image">
+                        <img src="/api/placeholder/400/300" alt="Business team celebrating growth">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -443,6 +671,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
+                <p>Soluzioni complete per la crescita del tuo business</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -455,7 +684,7 @@
                         </svg>
                     </div>
                     <h3>Agent Selection</h3>
-                    <p>We identify expert professionals in the financial sector.</p>
+                    <p>Identifichiamo professionisti esperti nel settore finanziario con un processo di selezione rigoroso basato su competenze specifiche.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -469,17 +698,16 @@
                         </svg>
                     </div>
                     <h3>Custom Networks</h3>
-                    <p>We build highly specialized and personalized commercial networks.</p>
+                    <p>Costruiamo reti commerciali altamente specializzate e personalizzate in base alle tue specifiche esigenze di mercato e target.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                         </svg>
                     </div>
-                    <h3>Strategic Recruiting</h3>
-                    <p>Recruiting model based on specific skills and objectives.</p>
+                    <h3>Lead Generation</h3>
+                    <p>Sviluppiamo strategie di lead generation multicanale per alimentare il tuo business con opportunità di vendita qualificate attraverso marketing digitale, campagne mirate e partnership strategiche.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -488,20 +716,19 @@
                             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                         </svg>
                     </div>
-                    <h3>Regulatory Training</h3>
-                    <p>OAM and IVASS courses to ensure legal compliance.</p>
+                    <h3>Formazione</h3>
+                    <p>Forniamo programmi di formazione normativa (OAM e IVASS) e commerciale per garantire conformità legale e massimizzare l'efficacia delle vendite.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="20" x2="18" y2="10"></line>
-                            <line x1="12" y1="20" x2="12" y2="4"></line>
-                            <line x1="6" y1="20" x2="6" y2="14"></line>
-                            <line x1="3" y1="20" x2="21" y2="20"></line>
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                     </div>
-                    <h3>Sales Training</h3>
-                    <p>Sales techniques to improve service performance.</p>
+                    <h3>Multicanalità</h3>
+                    <p>Affianchiamo gli agenti con contact center dedicati per presa appuntamenti, follow-up e caring post vendita, integrati con canali digitali per generare super leads qualificati su richiesta del cliente.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -510,7 +737,7 @@
                         </svg>
                     </div>
                     <h3>Monitoring & Compliance</h3>
-                    <p>Regulatory control, certification verification, periodic audits, and mystery shopping.</p>
+                    <p>Garantiamo la qualità con controllo normativo, verifica certificazioni, audit periodici e mystery shopping per mantenere elevati standard di servizio.</p>
                 </div>
             </div>
         </div>
@@ -520,39 +747,39 @@
         <div class="container">
             <div class="section-title">
                 <h2>Team</h2>
-                <p>Meet the professionals powering SimplySales' success</p>
+                <p>I professionisti che guidano il successo di SimplySales</p>
+            </div>
+            
+            <div class="team-image-banner">
+                <img src="/api/placeholder/1000/300" alt="Our team working together">
             </div>
             
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-image">
-                        <img src="/api/placeholder/200/200" alt="Flavio Meloni">
+                        <img src="/api/placeholder/200/200" alt="Team member">
                     </div>
-                    <h3 class="member-name">Flavio Meloni</h3>
-                    <p class="member-position">Amministratore Unico</p>
-                    <p class="member-bio">With over 15 years of experience in sales network development, Flavio leads our company with strategic vision and commitment to client success.</p>
-                    <div class="member-contact">
-                        <a href="mailto:flavio.meloni@simplybiz.it">Email</a> | 
-                        <a href="tel:+393476440117">+39 347 6440117</a>
-                    </div>
+                    <h3 class="member-name">Leadership Team</h3>
+                    <p class="member-position">Amministrazione</p>
+                    <p class="member-bio">Il nostro team di leadership vanta oltre 15 anni di esperienza nello sviluppo di reti di vendita e gestione di team commerciali nel settore finanziario.</p>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-image">
-                        <img src="/api/placeholder/200/200" alt="Team Member">
+                        <img src="/api/placeholder/200/200" alt="Team member">
                     </div>
-                    <h3 class="member-name">Maria Rossi</h3>
-                    <p class="member-position">Sales Director</p>
-                    <p class="member-bio">Maria brings 12 years of experience in financial sales networks, specializing in agent recruitment and sales performance optimization.</p>
+                    <h3 class="member-name">Sales Specialists</h3>
+                    <p class="member-position">Commerciale</p>
+                    <p class="member-bio">I nostri specialisti di vendita lavorano direttamente con i clienti per sviluppare strategie personalizzate e raggiungere obiettivi di crescita misurabili.</p>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-image">
-                        <img src="/api/placeholder/200/200" alt="Team Member">
+                        <img src="/api/placeholder/200/200" alt="Team member">
                     </div>
-                    <h3 class="member-name">Marco Bianchi</h3>
-                    <p class="member-position">Training Manager</p>
-                    <p class="member-bio">Marco oversees all training programs, ensuring our agents receive top-quality education in both regulatory compliance and sales techniques.</p>
+                    <h3 class="member-name">Training Experts</h3>
+                    <p class="member-position">Formazione</p>
+                    <p class="member-bio">Il nostro team di formazione garantisce che tutti gli agenti ricevano la migliore preparazione sia in ambito normativo che commerciale.</p>
                 </div>
             </div>
         </div>
@@ -562,7 +789,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Clienti</h2>
-                <p>Trusted by leading companies across the financial and commercial sectors</p>
+                <p>Aziende leader nei settori finanziario e commerciale che si affidano a noi</p>
             </div>
             
             <div class="clients-grid">
@@ -571,8 +798,8 @@
                         <img src="/api/placeholder/180/100" alt="Client Logo">
                     </div>
                     <div class="client-info">
-                        <h3>Finanza Italia S.p.A</h3>
-                        <p>Leading financial services provider specializing in investment solutions for SMEs.</p>
+                        <h3>Financial Services</h3>
+                        <p>Servizi finanziari specializzati in soluzioni di investimento per PMI.</p>
                     </div>
                 </div>
                 
@@ -581,8 +808,8 @@
                         <img src="/api/placeholder/180/100" alt="Client Logo">
                     </div>
                     <div class="client-info">
-                        <h3>Assicurazioni Sicure</h3>
-                        <p>Insurance company with nationwide coverage specializing in life and property insurance.</p>
+                        <h3>Insurance Company</h3>
+                        <p>Compagnia assicurativa con copertura nazionale specializzata in assicurazioni vita e proprietà.</p>
                     </div>
                 </div>
                 
@@ -591,57 +818,12 @@
                         <img src="/api/placeholder/180/100" alt="Client Logo">
                     </div>
                     <div class="client-info">
-                        <h3>Credito Facile</h3>
-                        <p>Consumer credit specialist with over 200 agents across Italy.</p>
+                        <h3>Credit Provider</h3>
+                        <p>Specialista di credito al consumo con oltre 200 agenti in tutta Italia.</p>
                     </div>
                 </div>
                 
                 <div class="client-card">
                     <div class="client-logo">
                         <img src="/api/placeholder/180/100" alt="Client Logo">
-                    </div>
-                    <div class="client-info">
-                        <h3>Immobiliare Futuro</h3>
-                        <p>Real estate company developing a specialized agent network for luxury properties.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <h3>simply<span>sales</span></h3>
-                        <p>Powering Business Growth</p>
-                    </div>
-                    <p>SimplySales is a brand owned by IFOAP SRL</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#mission">Mission</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#clienti">Clienti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#services">Agent Selection</a></li>
-                        <li><a href="#services">Custom Networks</a></li>
-                        <li><a href="#services">Training</a></li>
-                        <li><a href="#services">Monitoring</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 SimplySales. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                    </div
