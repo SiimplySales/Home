@@ -159,18 +159,6 @@
             color: var(--secondary-yellow);
         }
         
-        .hero-image {
-            max-width: 600px;
-            margin: 40px auto;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
         /* Mission Section */
         .mission {
             padding: 80px 0;
@@ -189,32 +177,8 @@
         }
         
         .mission-content {
-            max-width: 1100px;
+            max-width: 800px;
             margin: 0 auto;
-        }
-        
-        .mission-cols {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .mission-text {
-            flex: 3;
-            min-width: 300px;
-        }
-        
-        .mission-image {
-            flex: 2;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .mission-image img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .mission-highlight {
@@ -242,12 +206,6 @@
             display: inline-block;
             width: 1em;
             margin-left: -1em;
-        }
-        
-        .mission-icon {
-            display: inline-block;
-            width: 28px;
-            margin-right: 10px;
         }
         
         /* Services Section */
@@ -312,19 +270,6 @@
             background-color: white;
         }
         
-        .team-image-banner {
-            margin-bottom: 40px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .team-image-banner img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -343,21 +288,6 @@
         .team-member:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .member-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 20px;
-            background-color: white;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
         
         .member-name {
@@ -403,30 +333,12 @@
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
             transition: transform 0.3s;
+            padding: 25px;
         }
         
         .client-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .client-logo {
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--light-gray);
-            padding: 20px;
-        }
-        
-        .client-logo img {
-            max-width: 100%;
-            max-height: 80px;
-            object-fit: contain;
-        }
-        
-        .client-info {
-            padding: 20px;
         }
         
         .client-info h3 {
@@ -588,15 +500,6 @@
             .hero p {
                 font-size: 1.4rem;
             }
-            
-            .mission-cols {
-                flex-direction: column;
-            }
-            
-            .mission-image {
-                order: -1;
-                margin-bottom: 20px;
-            }
         }
     </style>
 </head>
@@ -631,9 +534,6 @@
         <div class="container">
             <h1><span class="simply">simply</span><span class="sales">sales</span></h1>
             <p><span class="powering">Powering</span> Business <span class="growth">Growth</span></p>
-            <div class="hero-image">
-                <img src="/api/placeholder/600/300" alt="Business growth chart">
-            </div>
             <a href="#contact" class="btn">Contact Us</a>
         </div>
     </section>
@@ -644,25 +544,18 @@
                 <h2>Our Mission</h2>
             </div>
             <div class="mission-content">
-                <div class="mission-cols">
-                    <div class="mission-text">
-                        <p class="mission-highlight">Siamo specialisti nella crescita commerciale.</p>
-                        <p>Forniamo soluzioni integrate e personalizzate per il settore finanziario e commerciale, focalizzandoci sulla creazione, gestione e monitoraggio di reti vendita specializzate e costruite su misura in funzione delle esigenze dei clienti.</p>
-                        <br>
-                        <p>Il nostro obiettivo è diventare un partner strategico, offrendo:</p>
-                        <ul class="mission-list">
-                            <li><strong>Formazione completa</strong> - Programmi formativi normativi e commerciali, curati da esperti del settore</li>
-                            <li><strong>Monitoraggio costante</strong> - Strumenti di analisi e reporting per ottimizzare le performance</li>
-                            <li><strong>Controllo qualità</strong> - Mystery shopping e audit periodici per garantire standard elevati</li>
-                            <li><strong>Tecnologie avanzate</strong> - Utilizzo di piattaforme digitali e multicanalità per massimizzare i risultati</li>
-                        </ul>
-                        <br>
-                        <p>Ci impegniamo a garantire che ogni cliente raggiunga i propri obiettivi di crescita attraverso un approccio personalizzato e risultati misurabili.</p>
-                    </div>
-                    <div class="mission-image">
-                        <img src="/api/placeholder/400/300" alt="Business team celebrating growth">
-                    </div>
-                </div>
+                <p class="mission-highlight">Siamo specialisti nella crescita commerciale.</p>
+                <p>Forniamo soluzioni integrate e personalizzate per il settore finanziario e commerciale, focalizzandoci sulla creazione, gestione e monitoraggio di reti vendita specializzate e costruite su misura in funzione delle esigenze dei clienti.</p>
+                <br>
+                <p>Il nostro obiettivo è diventare un partner strategico, offrendo:</p>
+                <ul class="mission-list">
+                    <li><strong>Formazione completa</strong> - Programmi formativi normativi e commerciali, curati da esperti del settore</li>
+                    <li><strong>Monitoraggio costante</strong> - Strumenti di analisi e reporting per ottimizzare le performance</li>
+                    <li><strong>Controllo qualità</strong> - Mystery shopping e audit periodici per garantire standard elevati</li>
+                    <li><strong>Tecnologie avanzate</strong> - Utilizzo di piattaforme digitali e multicanalità per massimizzare i risultati</li>
+                </ul>
+                <br>
+                <p>Ci impegniamo a garantire che ogni cliente raggiunga i propri obiettivi di crescita attraverso un approccio personalizzato e risultati misurabili.</p>
             </div>
         </div>
     </section>
@@ -750,33 +643,20 @@
                 <p>I professionisti che guidano il successo di SimplySales</p>
             </div>
             
-            <div class="team-image-banner">
-                <img src="/api/placeholder/1000/300" alt="Our team working together">
-            </div>
-            
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="/api/placeholder/200/200" alt="Team member">
-                    </div>
                     <h3 class="member-name">Leadership Team</h3>
                     <p class="member-position">Amministrazione</p>
                     <p class="member-bio">Il nostro team di leadership vanta oltre 15 anni di esperienza nello sviluppo di reti di vendita e gestione di team commerciali nel settore finanziario.</p>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="/api/placeholder/200/200" alt="Team member">
-                    </div>
                     <h3 class="member-name">Sales Specialists</h3>
                     <p class="member-position">Commerciale</p>
                     <p class="member-bio">I nostri specialisti di vendita lavorano direttamente con i clienti per sviluppare strategie personalizzate e raggiungere obiettivi di crescita misurabili.</p>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="/api/placeholder/200/200" alt="Team member">
-                    </div>
                     <h3 class="member-name">Training Experts</h3>
                     <p class="member-position">Formazione</p>
                     <p class="member-bio">Il nostro team di formazione garantisce che tutti gli agenti ricevano la migliore preparazione sia in ambito normativo che commerciale.</p>
@@ -794,9 +674,6 @@
             
             <div class="clients-grid">
                 <div class="client-card">
-                    <div class="client-logo">
-                        <img src="/api/placeholder/180/100" alt="Client Logo">
-                    </div>
                     <div class="client-info">
                         <h3>Financial Services</h3>
                         <p>Servizi finanziari specializzati in soluzioni di investimento per PMI.</p>
@@ -804,9 +681,6 @@
                 </div>
                 
                 <div class="client-card">
-                    <div class="client-logo">
-                        <img src="/api/placeholder/180/100" alt="Client Logo">
-                    </div>
                     <div class="client-info">
                         <h3>Insurance Company</h3>
                         <p>Compagnia assicurativa con copertura nazionale specializzata in assicurazioni vita e proprietà.</p>
@@ -814,9 +688,6 @@
                 </div>
                 
                 <div class="client-card">
-                    <div class="client-logo">
-                        <img src="/api/placeholder/180/100" alt="Client Logo">
-                    </div>
                     <div class="client-info">
                         <h3>Credit Provider</h3>
                         <p>Specialista di credito al consumo con oltre 200 agenti in tutta Italia.</p>
@@ -824,6 +695,87 @@
                 </div>
                 
                 <div class="client-card">
-                    <div class="client-logo">
-                        <img src="/api/placeholder/180/100" alt="Client Logo">
-                    </div
+                    <div class="client-info">
+                        <h3>Real Estate Group</h3>
+                        <p>Azienda immobiliare che sta sviluppando una rete di agenti specializzati per proprietà di lusso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Discuss Your Project</h3>
+                    <p>We're here to answer all your questions and help you achieve your sales goals.</p>
+                    <br>
+                    <p><strong>SimplySales</strong></p>
+                    <p>Email: <a href="mailto:info@simplysales.com">info@simplysales.com</a></p>
+                    <p>Phone: +39 123 456 7890</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <h3>simply<span>sales</span></h3>
+                        <p>Powering Business Growth</p>
+                    </div>
+                    <p>SimplySales is a brand owned by IFOAP SRL</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#mission">Mission</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#clienti">Clienti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Agent Selection</a></li>
+                        <li><a href="#services">Custom Networks</a></li>
+                        <li><a href="#services">Training</a></li>
+                        <li><a href="#services">Monitoring</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SimplySales. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
