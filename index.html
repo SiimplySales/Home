@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimplySales | Powering Business Growth</title>
+    <style>
+        :root {
+            --primary-blue: #4167ea;    /* Blue from the logo background */
+            --secondary-yellow: #ffd64c; /* Yellow from "sales" in the logo */
+            --white: #FFFFFF;           /* White text */
+            --light-gray: #F5F7FA;      /* Background color */
+            --text-dark: #333333;       /* Text color */
+            --text-light: #FFFFFF;      /* Light text */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            max-width: 250px;
+            height: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-yellow);
+        }
+        
+        .btn {
+            background-color: var(--secondary-yellow);
+            color: var(--primary-blue);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background-color: #e6bf36;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--primary-blue);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+        
+        .hero h1 .simply {
+            color: var(--white);
+        }
+        
+        .hero h1 .sales {
+            color: var(--secondary-yellow);
+        }
+        
+        .hero p {
+            font-size: 1.8rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero p .powering, 
+        .hero p .growth {
+            color: var(--secondary-yellow);
+        }
+        
+        /* Mission Section */
+        .mission {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin: 15px 0;
+            font-size: 1.3rem;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .service-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: white;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            background-color: white;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-name {
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+        }
+        
+        .member-position {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .member-bio {
+            margin-bottom: 15px;
+        }
+        
+        .member-contact a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .member-contact a:hover {
+            color: var(--secondary-yellow);
+        }
+        
+        /* Clients Section */
+        .clienti {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .client-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .client-logo {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-gray);
+            padding: 20px;
+        }
+        
+        .client-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+        }
+        
+        .client-info {
+            padding: 20px;
+        }
+        
+        .client-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary-yellow);
+        }
+        
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary-yellow);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav {
+                margin-top: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/250/80" alt="SimplySales Logo" style="background-color: #4167ea; border-radius: 4px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#clienti">Clienti</a></li>
+                    <li><a href="#contact" class="btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1><span class="simply">simply</span><span class="sales">sales</span></h1>
+            <p><span class="powering">Powering</span> Business <span class="growth">Growth</span></p>
+            <a href="#contact" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission</h2>
+            </div>
+            <div class="mission-content">
+                <p>We provide integrated, personalized solutions for the financial and commercial sectors, focusing on creating, managing, and monitoring specialized sales networks tailored to client needs.</p>
+                <br>
+                <p>Our goal is to become a strategic partner, offering consulting and tools that enable effective management of commercial networks.</p>
+                <br>
+                <p>We're committed to ensuring every client achieves their growth objectives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Agent Selection</h3>
+                    <p>We identify expert professionals in the financial sector.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                            <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                            <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Custom Networks</h3>
+                    <p>We build highly specialized and personalized commercial networks.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Strategic Recruiting</h3>
+                    <p>Recruiting model based on specific skills and objectives.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h3>Regulatory Training</h3>
+                    <p>OAM and IVASS courses to ensure legal compliance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                            <line x1="3" y1="20" x2="21" y2="20"></line>
+                        </svg>
+                    </div>
+                    <h3>Sales Training</h3>
+                    <p>Sales techniques to improve service performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Monitoring & Compliance</h3>
+                    <p>Regulatory control, certification verification, periodic audits, and mystery shopping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Team</h2>
+                <p>Meet the professionals powering SimplySales' success</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/api/placeholder/200/200" alt="Flavio Meloni">
+                    </div>
+                    <h3 class="member-name">Flavio Meloni</h3>
+                    <p class="member-position">Amministratore Unico</p>
+                    <p class="member-bio">With over 15 years of experience in sales network development, Flavio leads our company with strategic vision and commitment to client success.</p>
+                    <div class="member-contact">
+                        <a href="mailto:flavio.meloni@simplybiz.it">Email</a> | 
+                        <a href="tel:+393476440117">+39 347 6440117</a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/api/placeholder/200/200" alt="Team Member">
+                    </div>
+                    <h3 class="member-name">Maria Rossi</h3>
+                    <p class="member-position">Sales Director</p>
+                    <p class="member-bio">Maria brings 12 years of experience in financial sales networks, specializing in agent recruitment and sales performance optimization.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/api/placeholder/200/200" alt="Team Member">
+                    </div>
+                    <h3 class="member-name">Marco Bianchi</h3>
+                    <p class="member-position">Training Manager</p>
+                    <p class="member-bio">Marco oversees all training programs, ensuring our agents receive top-quality education in both regulatory compliance and sales techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="clienti" id="clienti">
+        <div class="container">
+            <div class="section-title">
+                <h2>Clienti</h2>
+                <p>Trusted by leading companies across the financial and commercial sectors</p>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-card">
+                    <div class="client-logo">
+                        <img src="/api/placeholder/180/100" alt="Client Logo">
+                    </div>
+                    <div class="client-info">
+                        <h3>Finanza Italia S.p.A</h3>
+                        <p>Leading financial services provider specializing in investment solutions for SMEs.</p>
+                    </div>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-logo">
+                        <img src="/api/placeholder/180/100" alt="Client Logo">
+                    </div>
+                    <div class="client-info">
+                        <h3>Assicurazioni Sicure</h3>
+                        <p>Insurance company with nationwide coverage specializing in life and property insurance.</p>
+                    </div>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-logo">
+                        <img src="/api/placeholder/180/100" alt="Client Logo">
+                    </div>
+                    <div class="client-info">
+                        <h3>Credito Facile</h3>
+                        <p>Consumer credit specialist with over 200 agents across Italy.</p>
+                    </div>
+                </div>
+                
+                <div class="client-card">
+                    <div class="client-logo">
+                        <img src="/api/placeholder/180/100" alt="Client Logo">
+                    </div>
+                    <div class="client-info">
+                        <h3>Immobiliare Futuro</h3>
+                        <p>Real estate company developing a specialized agent network for luxury properties.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <h3>simply<span>sales</span></h3>
+                        <p>Powering Business Growth</p>
+                    </div>
+                    <p>SimplySales is a brand owned by IFOAP SRL</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#mission">Mission</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#clienti">Clienti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Agent Selection</a></li>
+                        <li><a href="#services">Custom Networks</a></li>
+                        <li><a href="#services">Training</a></li>
+                        <li><a href="#services">Monitoring</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SimplySales. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
